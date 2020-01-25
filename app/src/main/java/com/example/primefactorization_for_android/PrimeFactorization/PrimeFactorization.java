@@ -6,7 +6,7 @@ import java.util.List;
 import com.example.primefactorization_for_android.PrimeFactorization.SystemInformation.SystemInformation;
 
 public class PrimeFactorization {
-    private String resultStr;
+    private String resultStr = "";
 
     public void Main(long n) {
         StringBuilder resultStrBuffer = new StringBuilder();
@@ -40,6 +40,9 @@ public class PrimeFactorization {
         return resultStr;
     }
 
+    public void clearResultStr() {
+        resultStr = "";
+    }
     private long GetBitLength(long N, long max) {
         for (long i = 1; i < max; i++) {
             if (N <= Math.pow(2, i)) {
