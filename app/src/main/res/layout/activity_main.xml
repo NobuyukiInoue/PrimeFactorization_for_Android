@@ -39,6 +39,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
     </Button>
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:visibility="gone"
+        style="?android:attr/progressBarStyle">
+    </ProgressBar>
     <ScrollView
         android:id="@+id/scroll_view"
         android:layout_margin="20dp"

@@ -20,6 +20,7 @@ public class PrimeFactorization {
         SystemInformation si = new SystemInformation();
         si.printProperties();
 
+        resultStrBuffer.append("n = " + Long.toString(n) + "\n");
         resultStrBuffer.append(Long.toString(n) + " < pow(2, " + Long.toString(GetBitLength(n, 4097)) + ")\n");
 
         long start = System.currentTimeMillis();
@@ -28,7 +29,7 @@ public class PrimeFactorization {
 
         long end = System.currentTimeMillis();
 
-        resultStrBuffer.append("n = " + Long.toString(n) + ", primes = [" + ArraylongToString(result) + "]\n");
+        resultStrBuffer.append("primes = [" + ArraylongToString(result) + "]\n");
         resultStrBuffer.append("Answer Check : " + AnswerCheck(n, result) + "\n");
         resultStrBuffer.append("Execute time : " + (end - start)/1000.0 + "[s]\n\n");
 

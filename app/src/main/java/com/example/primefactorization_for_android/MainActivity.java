@@ -8,6 +8,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ScrollView;
 import android.widget.TextView;
+import	android.widget.ProgressBar;
 
 import com.example.primefactorization_for_android.PrimeFactorization.PrimeFactorization;
 import com.example.primefactorization_for_android.ExLong.*;
@@ -18,6 +19,7 @@ import java.util.Locale;
 public class MainActivity extends AppCompatActivity {
     private EditText editTextInputNumeric;
     private Button buttonCalc;
+    private ProgressBar progressBar;
     private TextView textViewResult;
     private ScrollView scrollView;
     private PrimeFactorization pf;
@@ -30,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
 
         editTextInputNumeric = findViewById(R.id.edit_text_inputNumeric);
         buttonCalc = findViewById(R.id.button_calc);
+        progressBar = findViewById(R.id.progressBar);
+
         textViewResult = findViewById(R.id.text_view_Result);
         scrollView = findViewById(R.id.scroll_view);
 
@@ -50,8 +54,15 @@ public class MainActivity extends AppCompatActivity {
                 // Read the value you want to factor
                 n = n_temp.get();
 
+                // Display ProgressBar
+                progressBar.setVisibility(android.widget.ProgressBar.VISIBLE);
+
                 pf.Main(n);
             //  textViewResult.setText(pf.getResultStr());
+
+                // Hide ProgressBar
+                progressBar.setVisibility(android.widget.ProgressBar.INVISIBLE);
+
                 textViewResult.append(pf.getResultStr());
                 scrollView.fullScroll(View.FOCUS_DOWN);
             }
